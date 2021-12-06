@@ -7,6 +7,7 @@
     --color-white: #fff;
     --background-color-grey: #F5F4FA;
     --footer-color: #2F303A;
+    --icon-color: #AFB1B8;
 
     --margin-gap: 30px;
 }
@@ -158,11 +159,11 @@ a {
     background-image: linear-gradient(to right, 
 rgba(47, 48, 58, 0.4), 
 rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     padding: 200px 0;
-    min-height: 600px;  
+    width: 1600px;  
 }
 
 .hero .conteiner {
@@ -265,8 +266,6 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 
 .work-list {
     display: flex;
-    /* flex-direction: row;
-    justify-content: space-between; */
     flex-wrap: wrap;
 }
 
@@ -302,12 +301,12 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 
 .team-list {
     display: flex;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
 }
 
 .team-item {
     background-color: var(--color-white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
     flex-basis: calc((100% - 3 * var(--margin-gap)) / 4);
     border-radius: 0px 0px 4px 4px;
@@ -318,7 +317,7 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .team-content {
-    padding: var(--margin-gap) 0;
+    padding: var(--margin-gap) 32px;
 }
 
 .team-member, 
@@ -336,6 +335,41 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 
     margin-bottom: 10px;
 }
+
+.team-text {
+    margin-bottom: 16px;
+}
+
+.team-icon {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 50% 50%;  
+}
+
+.team-icon:hover {
+    background-color: var(--color-blue);
+}
+
+.team-icon:not(:last-child) {
+    margin-right: 10px;
+}
+
+.icon-instagram, 
+.icon-twitter, 
+.icon-facebook, 
+.icon-linkedin {
+    fill: var(--icon-color);
+}
+
+.team-icon:hover .icon-instagram, 
+.team-icon:hover .icon-twitter, 
+.team-icon:hover .icon-facebook, 
+.team-icon:hover .icon-linkedin {
+    fill: var(--color-white);
+}
+
 
 /* ФУТЕР */
 .footer {
