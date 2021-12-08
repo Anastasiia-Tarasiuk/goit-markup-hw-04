@@ -44,6 +44,7 @@ img {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* Стилизация контейнера */
@@ -69,8 +70,6 @@ a {
 /* Элементы хедера в ряд */
 .header .conteiner {
     align-items: center;
-    /* padding-top: 24px;
-    padding-bottom: 25px; */
     display: flex;
 }
 
@@ -147,7 +146,9 @@ a {
 }
 
 .contacts-link:hover .icon-envelope,
-.contacts-link:hover .icon-smartphone {
+.contacts-link:hover .icon-smartphone, 
+.contacts-link:focus .icon-envelope,
+.contacts-link:focus .icon-smartphone {
     fill: var(--color-blue);
 }
 
@@ -159,11 +160,10 @@ a {
     background-image: linear-gradient(to right, 
 rgba(47, 48, 58, 0.4), 
 rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-    background-size: contain;
+    background-size: 1600px 600px;
     background-repeat: no-repeat;
     background-position: center;
     padding: 200px 0;
-    width: 1600px;  
 }
 
 .hero .conteiner {
@@ -274,7 +274,8 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .work-title,
-.team-title {
+.team-title, 
+.clients-title {
     color: var(--color-black);
 
     font-family: Roboto;
@@ -307,8 +308,8 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 .team-item {
     background-color: var(--color-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-
     flex-basis: calc((100% - 3 * var(--margin-gap)) / 4);
+
     border-radius: 0px 0px 4px 4px;
 }
 
@@ -340,41 +341,100 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     margin-bottom: 16px;
 }
 
-.team-icon {
-    display: inline-block;
+.member-list {
+    display: flex;
+}
+
+.member-item {
     width: 44px;
     height: 44px;
     padding: 12px;
-    border-radius: 50% 50%;  
+    border-radius: 50%;  
 }
 
-.team-icon:hover {
-    background-color: var(--color-blue);
-}
-
-.team-icon:not(:last-child) {
+.member-item:not(:last-child) {
     margin-right: 10px;
 }
 
-.icon-instagram, 
-.icon-twitter, 
-.icon-facebook, 
-.icon-linkedin {
+.member-item:hover, 
+.member-item:focus {
+    background-color: var(--color-blue);
+}
+
+.member-link svg {
     fill: var(--icon-color);
 }
 
-.team-icon:hover .icon-instagram, 
-.team-icon:hover .icon-twitter, 
-.team-icon:hover .icon-facebook, 
-.team-icon:hover .icon-linkedin {
+.member-item:hover svg, 
+.member-item:focus svg {
     fill: var(--color-white);
 }
 
+
+/* Постоянные клиенты */
+.clients-list {
+    display: flex;
+}
+
+.clients-item {
+    flex-basis: calc((100% - 5 * var(--margin-gap)) / 6);
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+    background-size: 106px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.clients-item:hover,
+.clients-item:focus {
+    border-color: var(--color-blue);
+}
+
+.clients-item:not(:last-child) {
+    margin-right: var(--margin-gap);
+}
+
+.client-one {
+    background-image: url("../images/client-one.svg");
+}
+
+.client-two {
+    background-image: url("../images/client-two.svg");
+}
+
+.client-three {
+    background-image: url("../images/client-three.svg");
+}
+ 
+.client-four {
+    background-image: url("../images/client-four.svg");
+}
+ 
+.client-five {
+    background-image: url("../images/client-five.svg");
+}
+ 
+.client-six {
+    background-image: url("../images/client-six.svg");
+}
 
 /* ФУТЕР */
 .footer {
     background-color: var(--footer-color);
     padding: 60px 0;
+}
+
+.footer .conteiner {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-address {
+    margin-right: 70px;
 }
 
 .footer-logo {
@@ -400,6 +460,43 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 /* Прозрачность элементов футера */
 .transparent { 
     color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-title {
+    color: var(--color-white);
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.footer-list {
+    display: flex;
+}
+
+.footer-item {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 12px;
+}
+
+.footer-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-link svg {
+    fill: var(--color-white);
+}
+
+.footer-item:hover, 
+.footer-item:focus {
+    background-color: var(--color-blue);
 }
 
 /* ПОРТФОЛИО */
