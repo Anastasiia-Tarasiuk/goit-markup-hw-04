@@ -44,7 +44,6 @@ img {
 
 a {
     text-decoration: none;
-    /* cursor: pointer; */
 }
 
 /* Стилизация контейнера */
@@ -345,31 +344,28 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     display: flex;
 }
 
-.member-item {
-    width: 44px;
-    height: 44px;
-    padding: 12px;
-    border-radius: 50%;  
-}
-
 .member-item:not(:last-child) {
     margin-right: 10px;
 }
 
-.member-item:hover, 
-.member-item:focus {
-    background-color: var(--color-blue);
+.member-item {
 }
 
-.member-link svg {
+.member-link {
+    width: 44px;
+    height: 44px;
+    display: block;
+    border-radius: 50%;
+    padding: 12px;
     fill: var(--icon-color);
 }
 
-.member-item:hover svg, 
-.member-item:focus svg {
+.member-link:hover, 
+.member-link:focus {
+    background-color: var(--color-blue);
     fill: var(--color-white);
-}
 
+}
 
 /* Постоянные клиенты */
 .clients-list {
@@ -456,13 +452,6 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     display: flex;
 }
 
-.footer-item {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-}
-
 .footer-item:not(:last-child) {
     margin-right: 10px;
 }
@@ -470,9 +459,10 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 .footer-link {
     display: block;
     padding: 12px;
-}
-
-.footer-link svg {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
     fill: var(--color-white);
 }
 
