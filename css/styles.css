@@ -46,6 +46,11 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+   
+
 /* Стилизация контейнера */
 .conteiner {
     width: 1200px;
@@ -159,10 +164,12 @@ a {
     background-image: linear-gradient(to right, 
 rgba(47, 48, 58, 0.4), 
 rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
-    background-size: 1600px 600px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 200px 0;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .hero .conteiner {
@@ -195,7 +202,6 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
-    cursor: pointer;
 
     width: 200px;
     height: 50px;
@@ -214,10 +220,13 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .benefits-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color:var(--background-color-grey);
     width: 270px;
     height: 120px;
-    padding: 25px 100px;
     margin-bottom: var(--margin-gap);
     border-radius: 4px;
 }
@@ -317,7 +326,7 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .team-content {
-    padding: var(--margin-gap) 32px;
+    padding: var(--margin-gap) 0;
 }
 
 .team-member, 
@@ -342,6 +351,7 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 
 .member-list {
     display: flex;
+    justify-content: center;
 }
 
 .member-item:not(:last-child) {
@@ -349,14 +359,17 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .member-item {
+    width: 44px;
+    height: 44px;
 }
 
 .member-link {
-    width: 44px;
-    height: 44px;
-    display: block;
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    padding: 12px;
     fill: var(--icon-color);
 }
 
@@ -374,13 +387,7 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 
 .clients-item {
     flex-basis: calc((100% - 5 * var(--margin-gap)) / 6);
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;   
-}
-
-.clients-item:hover,
-.clients-item:focus {
-    border-color: var(--color-blue);
+    height: 92px; 
 }
 
 .clients-item:not(:last-child) {
@@ -388,13 +395,22 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .clients-link {
-    display: block;
-    height: 92px;
-    padding: 16px 32px;   
+    fill: var(--icon-color);
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+
+    width: 100%;
+    height: 100%;
+    
+    display: flex;  
+    justify-content: center;
+    align-items: center;
 }
 
-.clients-link svg {
-    fill: var(--icon-color);
+.clients-link:hover,
+.clients-link:focus {
+    border-color: var(--color-blue);
+    fill: var(--color-blue);
 }
 
 /* ФУТЕР */
@@ -452,15 +468,21 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     display: flex;
 }
 
+.footer-item {
+    width: 44px;
+    height: 44px;    
+}
+
 .footer-item:not(:last-child) {
     margin-right: 10px;
 }
 
 .footer-link {
-    display: block;
-    padding: 12px;
-    width: 44px;
-    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     fill: var(--color-white);
@@ -469,7 +491,6 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 .footer-link:hover, 
 .footer-link:focus {
     background-color: var(--color-blue);
-    border-radius: 50%;
 }
 
 /* ПОРТФОЛИО */
@@ -516,14 +537,19 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
     margin-bottom: calc(-1 * var(--margin-gap));
 }
 
-.portfolio-item:hover {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 .portfolio-item {
     margin-right: var(--margin-gap);
     margin-bottom: var(--margin-gap);
     flex-basis: calc(100% / 3 - var(--margin-gap));
+}
+
+.portfolio-link {
+    display: block;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-content {
@@ -543,7 +569,9 @@ rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
 }
 
 .portfolio-text {
+    color: var(--color-grey);
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;
+
 }
